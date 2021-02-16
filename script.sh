@@ -27,7 +27,7 @@ sudo mysql_secure_installation
 
 mysql  -u root -e "CREATE DATABASE PULEMET;"
 mysql  -u root -e "CREATE USER mkspulemet@localhost IDENTIFIED BY '07071989';"
-mysql  -u root -e "GRANT ALL PRIVILEGES ON mkspulemet.* TO 'mkspulemet'@'localhost';"
+mysql  -u root -e "GRANT ALL PRIVILEGES ON PULEMET.* TO 'mkspulemet'@'localhost';"
 mysql  -u root -e "FLUSH PRIVILEGES;"
 
 
