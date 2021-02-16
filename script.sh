@@ -11,13 +11,13 @@ sudo ufw allow in 80/tcp -y
 
 sudo touch /etc/apache2/sites-availeble/bin.by.conf
 
-sudo echo "<virtualHost *:80>" > /etc/apache2/sites-available/bin.by.conf
-sudo echo "	ServerName bin.by" > /etc/apache2/sites-available/bin.by.conf
-sudo echo "	ServerAdmin webmaster@host" > /etc/apache2/sites-available/bin.by.conf
-sudo echo "	DocumentRoot /var/www/bin.by" > /etc/apache2/sites-available/bin.by.conf
-sudo echo "	ErrorLog \${APACHE_LOG_DIR}/$errlog.log" > /etc/apache2/sites-available/bin.by.conf
-sudo echo "	CustomLog \${APACHE_LOG_DIR}/$acclog.log combined" > /etc/apache2/sites-available/bin.by.conf
-sudo echo "</VirtualHost>" > /etc/apache2/sites-available/bin.by.conf
+echo "<virtualHost *:80>" | sudo tee /etc/apache2/sites-available/bin.by.conf
+echo "	ServerName bin.by" | sudo tee /etc/apache2/sites-available/bin.by.conf
+echo "	ServerAdmin webmaster@host" | sudo tee /etc/apache2/sites-available/bin.by.conf
+echo "	DocumentRoot /var/www/bin.by" | sudo tee /etc/apache2/sites-available/bin.by.conf
+echo "	ErrorLog \${APACHE_LOG_DIR}/errlog.log" | sudo tee /etc/apache2/sites-available/bin.by.conf
+echo "	CustomLog \${APACHE_LOG_DIR}/acclog.log combined" | sudo tee /etc/apache2/sites-available/bin.by.conf
+echo "</VirtualHost>" > /etc/apache2/sites-available/bin.by.conf
 
 
 sudo wget https://ru.wordpress.org/latest-ru_RU.zip
@@ -26,15 +26,11 @@ sudo mv /var/www/wordpress/ /var/www/bin.by/
 
 sudo mysql_secure_installation
 
-mysql  -e "CREATE DATABASE PULEMET"
-mysql  -e "CREATE USER mkspulemet@localhost IDENTIFIED BY '07071989';"
-mysql  -e "GRANT ALL PRIVILEGES ON mkspulemet.* TO 'mkspulemet'@'localhost';"
-mysql  -e "FLUSH PRIVILEGES;"
+mysql  -u root -e "CREATE DATABASE PULEMET"
+mysql  -u root -e "CREATE USER mkspulemet@localhost IDENTIFIED BY '07071989';"
+mysql  -u root -e "GRANT ALL PRIVILEGES ON mkspulemet.* TO 'mkspulemet'@'localhost';"
+mysql  -u root -e "FLUSH PRIVILEGES;"
 
-
-sudo wget https://ru.wordpress.org/latest-ru_RU.zip
-sudo unzip latest-ru_RU.zip -d /var/www/
-sudo mv /var/www/wordpress/ /var/www/bin.by/
 
 sudo a2ensite bin.by.conf
 sudo service apache2 restart
