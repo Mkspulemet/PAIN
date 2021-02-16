@@ -34,3 +34,4 @@ mysql  -u root -e "FLUSH PRIVILEGES;"
 
 sudo a2ensite bin.by.conf
 sudo service apache2 restart
+# bye
