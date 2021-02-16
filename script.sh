@@ -30,7 +30,7 @@ mysql  -u root -e "CREATE USER mkspulemet@localhost IDENTIFIED BY '07071989';"
 mysql  -u root -e "GRANT ALL PRIVILEGES ON pulemet.* TO 'mkspulemet'@'localhost';"
 mysql  -u root -e "FLUSH PRIVILEGES;"
 
-
+sudo chown -R www-data:www-data /var/www/bin.by/
 sudo a2ensite bin.by.conf
 sudo service apache2 restart
 # bye
