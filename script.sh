@@ -9,12 +9,12 @@ sudo apt install php-curl php-json php-cgi php-gd php-zip php-mbstring php-xml p
 
 sudo ufw allow in 80/tcp -y
 
-sudo echo "<virtualHost *:80>" > /etc/apache2/sites-available/bin.by.conf
-sudo echo "	ServerName bin.by" > /etc/apache2/sites-available/bin.by.conf
-sudo echo "	ServerAdmin webmaster@host" > /etc/apache2/sites-available/bin.by.conf
-sudo echo "	DocumentRoot /var/www/bin.by" > /etc/apache2/sites-available/bin.by.conf
-sudo echo "	ErrorLog \${APACHE_LOG_DIR}/$errlog.log" > /etc/apache2/sites-available/bin.by.conf
-echo "	CustomLog \${APACHE_LOG_DIR}/$acclog.log combined" > /etc/apache2/sites-available/bin.by.conf
+sudo echo "<virtualHost *:80>" >> /etc/apache2/sites-available/bin.by.conf
+sudo echo "	ServerName bin.by" >> /etc/apache2/sites-available/bin.by.conf
+sudo echo "	ServerAdmin webmaster@host" >> /etc/apache2/sites-available/bin.by.conf
+sudo echo "	DocumentRoot /var/www/bin.by" >> /etc/apache2/sites-available/bin.by.conf
+sudo echo "	ErrorLog \${APACHE_LOG_DIR}/$errlog.log" >> /etc/apache2/sites-available/bin.by.conf
+echo "	CustomLog \${APACHE_LOG_DIR}/$acclog.log combined" >> /etc/apache2/sites-available/bin.by.conf
 echo "</VirtualHost>" > /etc/apache2/sites-available/bin.by.conf
 
 
