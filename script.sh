@@ -10,7 +10,7 @@ sudo apt install php-curl php-json php-cgi php-gd php-zip php-mbstring php-xml p
 
 sudo touch /etc/apache2/sites-available/bin.by.conf
 
-echo "<virtualHost *:80>" | sudo tee -a /etc/apache2/sites-available/bin.by.conf
+echo "<VirtualHost *:80>" | sudo tee -a /etc/apache2/sites-available/bin.by.conf
 echo "	ServerName bin.by" | sudo tee -a /etc/apache2/sites-available/bin.by.conf
 echo "	ServerAdmin webmaster@host" | sudo tee -a /etc/apache2/sites-available/bin.by.conf
 echo "	DocumentRoot /var/www/bin.by" | sudo tee -a /etc/apache2/sites-available/bin.by.conf
@@ -25,7 +25,7 @@ sudo mv /var/www/wordpress/ /var/www/bin.by/
 
 sudo mysql_secure_installation
 
-mysql  -u root -e "CREATE DATABASE PULEMET"
+mysql  -u root -e "CREATE DATABASE PULEMET;"
 mysql  -u root -e "CREATE USER mkspulemet@localhost IDENTIFIED BY '07071989';"
 mysql  -u root -e "GRANT ALL PRIVILEGES ON mkspulemet.* TO 'mkspulemet'@'localhost';"
 mysql  -u root -e "FLUSH PRIVILEGES;"
