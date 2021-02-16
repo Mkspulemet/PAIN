@@ -9,7 +9,7 @@ sudo apt install php-curl php-json php-cgi php-gd php-zip php-mbstring php-xml p
 
 sudo ufw allow in 80/tcp -y
 
-sudo touch /etc/apache2/sites-availeble/bin.by.conf
+sudo touch /etc/apache2/sites-available/bin.by.conf
 
 echo "<virtualHost *:80>" | sudo tee /etc/apache2/sites-available/bin.by.conf
 echo "	ServerName bin.by" | sudo tee /etc/apache2/sites-available/bin.by.conf
