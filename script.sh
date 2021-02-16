@@ -16,7 +16,7 @@ echo "	ServerAdmin webmaster@host" | sudo tee -a /etc/apache2/sites-available/bi
 echo "	DocumentRoot /var/www/bin.by" | sudo tee -a /etc/apache2/sites-available/bin.by.conf
 echo "	ErrorLog \${APACHE_LOG_DIR}/errlog.log" | sudo tee -a /etc/apache2/sites-available/bin.by.conf
 echo "	CustomLog \${APACHE_LOG_DIR}/acclog.log combined" | sudo tee -a /etc/apache2/sites-available/bin.by.conf
-echo "</VirtualHost>" > | sudo tee -a /etc/apache2/sites-available/bin.by.conf
+echo "</VirtualHost>" | sudo tee -a /etc/apache2/sites-available/bin.by.conf
 
 
 sudo wget https://ru.wordpress.org/latest-ru_RU.zip
