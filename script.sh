@@ -26,10 +26,10 @@ sudo mv /var/www/wordpress/ /var/www/bin.by/
 
 sudo mysql_secure_installation
 
-mysql -u root -e "CREATE DATABASE PULEMET"
-mysql -u root -e "CREATE USER mkspulemet@localhost IDENTIFIED BY '07071989';"
-mysql -u root -e "GRANT ALL PRIVILEGES ON mkspulemet.* TO 'mkspulemet'@'localhost';"
-mysql -u root -e "FLUSH PRIVILEGES;"
+mysql  -e "CREATE DATABASE PULEMET"
+mysql  -e "CREATE USER mkspulemet@localhost IDENTIFIED BY '07071989';"
+mysql  -e "GRANT ALL PRIVILEGES ON mkspulemet.* TO 'mkspulemet'@'localhost';"
+mysql  -e "FLUSH PRIVILEGES;"
 
 
 sudo wget https://ru.wordpress.org/latest-ru_RU.zip
