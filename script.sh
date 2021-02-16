@@ -10,7 +10,7 @@ sudo apt install php-curl php-json php-cgi php-gd php-zip php-mbstring php-xml p
 
 sudo touch /etc/apache2/sites-available/bin.by.conf
 
-echo "<VirtualHost *:80>" | sudo tee -a /etc/apache2/sites-available/bin.by.conf
+echo "<VirtualHost *:80>" | sudo tee a /etc/apache2/sites-available/bin.by.conf
 echo "	ServerName bin.by" | sudo tee -a /etc/apache2/sites-available/bin.by.conf
 echo "	ServerAdmin webmaster@host" | sudo tee -a /etc/apache2/sites-available/bin.by.conf
 echo "	DocumentRoot /var/www/bin.by" | sudo tee -a /etc/apache2/sites-available/bin.by.conf
