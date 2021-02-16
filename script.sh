@@ -7,17 +7,16 @@ sudo apt install mysql-server -y
 sudo apt install php libapache2-mod-php php-mysql -y
 sudo apt install php-curl php-json php-cgi php-gd php-zip php-mbstring php-xml php-xmlrpc -y
 
-sudo ufw allow in 80/tcp -y
 
 sudo touch /etc/apache2/sites-available/bin.by.conf
 
-echo "<virtualHost *:80>" | sudo tee /etc/apache2/sites-available/bin.by.conf
-echo "	ServerName bin.by" | sudo tee /etc/apache2/sites-available/bin.by.conf
-echo "	ServerAdmin webmaster@host" | sudo tee /etc/apache2/sites-available/bin.by.conf
-echo "	DocumentRoot /var/www/bin.by" | sudo tee /etc/apache2/sites-available/bin.by.conf
-echo "	ErrorLog \${APACHE_LOG_DIR}/errlog.log" | sudo tee /etc/apache2/sites-available/bin.by.conf
-echo "	CustomLog \${APACHE_LOG_DIR}/acclog.log combined" | sudo tee /etc/apache2/sites-available/bin.by.conf
-echo "</VirtualHost>" > /etc/apache2/sites-available/bin.by.conf
+echo "<virtualHost *:80>" | sudo tee -a /etc/apache2/sites-available/bin.by.conf
+echo "	ServerName bin.by" | sudo tee -a /etc/apache2/sites-available/bin.by.conf
+echo "	ServerAdmin webmaster@host" | sudo tee -a /etc/apache2/sites-available/bin.by.conf
+echo "	DocumentRoot /var/www/bin.by" | sudo tee -a /etc/apache2/sites-available/bin.by.conf
+echo "	ErrorLog \${APACHE_LOG_DIR}/errlog.log" | sudo tee -a /etc/apache2/sites-available/bin.by.conf
+echo "	CustomLog \${APACHE_LOG_DIR}/acclog.log combined" | sudo tee -a /etc/apache2/sites-available/bin.by.conf
+echo "</VirtualHost>" > | sudo tee -a /etc/apache2/sites-available/bin.by.conf
 
 
 sudo wget https://ru.wordpress.org/latest-ru_RU.zip
