@@ -11,7 +11,7 @@ functionserver {
 	
 }
 
-funtionclient{
+funtionclient {
 	sudo yum install -y nfs-util
         sudo systemctl start nfs-server rpcbind
         sudo systemctl enable nfs-server rpcbind
