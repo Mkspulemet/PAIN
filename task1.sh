@@ -1,6 +1,7 @@
 #!/bin/bash
 name=`hostname` 
-functionserver {
+functionserver()
+{
 	sudo yum install -y nfs-util
 	sudo systemctl start nfs-server rpcbind
 	sudo systemctl enable nfs-server rpcbind
@@ -11,7 +12,8 @@ functionserver {
 	
 }
 
-funtionclient {
+funtionclient() 
+{
 	sudo yum install -y nfs-util
         sudo systemctl start nfs-server rpcbind
         sudo systemctl enable nfs-server rpcbind
@@ -24,12 +26,10 @@ funtionclient {
 
 #conditions
 
-if [$name=server] 
-then
-   echo `hostname`
-   functionclient
-elif [$name=server] 
-then
-   echo `hostname`
-   functionclient
+if [ "${osname}" == "server" ]; then
+	echo ${osname}
+	f_server_install
+elif [ "${osname}" == "client" ]; then
+	echo ${osname}
+	f_client_install
 fi
